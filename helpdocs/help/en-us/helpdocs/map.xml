@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map>
+    <topicref href="overview.xml" navtitle="Overview" type="concept"/>
+    <topicref href="prerequisites.xml" navtitle="Prerequisites" type="concept"/>
+    <topicref href="steps.xml" navtitle="Steps" type="concept"/>
+    <topicref href="changelogs.xml" navtitle="Change Logs" type="links"/>
+
+    <topicref href="features.xml" navtitle="Features">
+      <topicref href="features/pods.xml" navtitle="Pods" />
+      <topicref href="features/deployments.xml" navtitle="Deployments" />
+      <topicref href="features/logs.xml" navtitle="Historical Logs" />
+      <topicref href="features/configurations.xml" navtitle="Configurations" />
+      <topicref href="features/admins.xml" navtitle="Admins" />
+      <topicref href="features/notificationBar.xml" navtitle="Notification Bar" />
+    </topicref>
+</map>

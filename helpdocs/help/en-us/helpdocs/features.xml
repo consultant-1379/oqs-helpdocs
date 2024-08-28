@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="Features">
+    <title>Features</title>
+    <conbody>
+        <section>
+            <p>These pages provide information on all of the features in the OpenStack Queuing Solution</p>
+            <p>
+                <image href="/resources/images/common/tutorial.svg" alt="Tutorial" align="left"/>
+                <xref href="features/pods.xml" type="task">Pods</xref>
+            </p>
+            <p>
+                <image href="/resources/images/common/tutorial.svg" alt="Tutorial" align="left"/>
+                <xref href="features/deployments.xml" type="task">Deployments</xref>
+            </p>
+            <p>
+                <image href="/resources/images/common/tutorial.svg" alt="Tutorial" align="left"/>
+                <xref href="features/logs.xml" type="task">Historical Logs</xref>
+            </p>
+            <p>
+                <image href="/resources/images/common/tutorial.svg" alt="Tutorial" align="left"/>
+                <xref href="features/configurations.xml" type="task">Configurations</xref>
+            </p>
+            <p>
+                <image href="/resources/images/common/tutorial.svg" alt="Tutorial" align="left"/>
+                <xref href="features/admins.xml" type="task">Admins</xref>
+            </p>
+            <p>
+                <image href="/resources/images/common/tutorial.svg" alt="Tutorial" align="left"/>
+                <xref href="features/notificationBar.xml" type="task">Notification Bar</xref>
+            </p>
+        </section>
+    </conbody>
+</concept>

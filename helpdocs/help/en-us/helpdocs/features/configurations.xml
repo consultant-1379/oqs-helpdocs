@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<task id="configurations">
+  <title>Configurations</title>
+  <taskbody>
+    <context>
+      <p>
+        A Configuration is an artifact that holds information about default values for Pods and Products:
+      </p>
+      <ul>
+        <li>Pod: Load Tolerance.</li>
+        <li>Product: Name, Load Value and Timeout Value.</li>
+      </ul>
+    <b>NOTES:</b>
+      <ul>
+        <li>Configurations are only accessable to Admin users.</li>
+        <li>Currently only 1 configuration is allowed.</li>
+      </ul>
+      <p><b>Configurations List View</b></p>
+      <p>
+        The list page provides a list-view for Configurations.
+      </p>
+      <p><b>Configurations View</b></p>
+      <p>
+        The configuration-view page provides a view where current information for the artifact can be viewed.
+      </p>
+      <ul>
+        <li>
+          Default Pod Load Tolerance: Value that is used for when a Pod is created and no value for Load Tolerance is passed.
+        </li>
+        </ul>
+      <p>
+       Products:
+      </p>
+      <ol>
+        <li>
+          Product Name: Name for a Product.
+        </li>
+        <li>
+          Product Load Value: Value that is used for when a Product is created and no value for Load Value is passed.
+        </li>
+        <li>
+          Product Timeout Value: Value that is used for when a Product is created and no value for Timeout Value is passed.
+        </li>
+      </ol>
+    </context>
+  </taskbody>
+</task>

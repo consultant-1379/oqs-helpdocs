@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<task id="pods">
+  <title>Pods</title>
+  <taskbody>
+    <context>
+      <p>
+        A Pod within the OpenStack Queuing Solution (OQS) represents an
+        OpenStack Cloud. OQS provides Cloud Administrators the
+        functionality to create unique configurations with regards to
+        managing the deployment of different product types on shared tenant clouds.
+      </p>
+
+      <p>
+        Cloud configurations are made up of the following parameters:
+      </p>
+      <ul>
+        <li>
+          <b>Queue Product:</b> The Queue Product select allows a user
+          to enable queuing based on the product/deployment variant within a given Pod.
+          A user can select checkboxes for queuing all products, an individual product
+          and or any combination of products.
+        </li>
+        <li>
+          <b>Queuing Enabled:</b> A toggle to enable/disable the
+          queue-handling of Deployments. When disabled, no 'Queued' Deployments
+          can be set to 'Active'. This toggle has use-cases where, for example,
+          a Cloud goes offline, and the Administrator wants no associated
+          Deployment jobs to begin until it comes back online.
+        </li>
+        <li>
+          <b>Pod Load Tolerance:</b> How many associated
+          Deployments are permitted to run jobs concurrently. When this value
+          is reached, any further Deployments become queued until there is enough load capacity
+          available.
+        </li>
+        <li>
+          <b>Load value</b> The capacity that product takes up from total Pod Load Tolerance.
+        </li>
+        <li>
+          <b>Timeout value</b> This value is use to provide a given time to a Product to say how long it's Deployments can run in Active Deployment section, before next Queued Product's Deployment can start.
+        </li>
+        <li>
+          <b>Install/Upgrade Metrics:</b>
+           These metrics show the details of how many deployments are installed/upgraded successfully, failed, and timed out.<br/>
+            <ul>
+              <li>
+              Deployment instances updated via the REST API with the status 'Finished', they will be automatically moved to Finished Deployments with a check icon
+              and the Job Type based Successes metric will be incremented.
+              </li>
+              <li>
+              Deployment instances updated via the REST API with the status 'Failed', they will be automatically moved to Finished Deployments with an exclamation icon
+              and the Job Type based Failures metric will be incremented.
+              </li>
+              <li>
+              If an active Deployment instance status is not updated via the REST API, its status will change to 'Timed-Out' after the default Product timeout or if set, Deployment custom timeout value has been exceeded.
+               The Time-Outs metric will be incremented.
+              </li>
+            </ul>
+        </li>
+      </ul>
+
+      <p><b>Radiator View</b></p>
+      <p>The radiator view presents a visual representation of the queue
+        status for every Pod in the OQS. A user can select specific Pods to monitor
+        using the 'Custom View' tab in the radiator view. Each tile represents a Pod and displays
+        current queue status and size. Pod tiles where queuing is disabled are
+        greyed-out, while others are given a status colour of either green,
+        yellow or red.
+      </p>
+      <p>
+        The Pod tile warning colour indicators are determined based on the % of capacity used in the Pod.
+      </p>
+      <ul>
+        <li>
+          Green (Good): Pod total load at 70% or less.
+        </li>
+        <li>
+          Yellow (Caution): Pod total load at 70% - 90%.
+        </li>
+        <li>
+          Red (Warning): Pod total load over 90%.
+        </li>
+      </ul>
+      <p><b>List View</b></p>
+      <p>
+        The list page provides a list-view for Pods, providing information on
+        the settings applied for each Pod. Similar to the radiator page, the
+        list page provides the same colour warning indicators depending on each
+        Pods queue-status.<br/>
+        <b>NOTE:</b> Admin users are only allowed to delete a Pod, using the "Delete" button. <br/>
+        This button is only seen by Admins, login to access this button if you are Admin user.
+      </p>
+
+      <p><b>Objective</b></p>
+      <p>Create a New Pod within the OpenStack Queuing Solution.</p>
+
+      <p><b>Outline</b>
+        <ol>
+          <li>
+            <xref href="#loginToOQS">Log-In to the OQS System</xref>
+          </li>
+          <li>
+            <xref href="#openPodList">Open the Pods List View</xref>
+          </li>
+          <li>
+            <xref href="#openCreatePod">Select the "Create" Button</xref>
+          </li>
+          <li>
+            <xref href="#enterDetails">Enter the Pod Details</xref>
+          </li>
+          <li>
+            <xref href="#savePod">Save</xref>
+          </li>
+        </ol>
+      </p>
+    </context>
+
+    <steps>
+      <step id="loginToOQS">
+        <cmd>Log-In to the OQS System</cmd>
+        <info>
+          <p>
+            Select the User tab in the nav bar, then select <b>"login"</b>.
+            On submission of the required user login credentials, the user will
+            be re-directed to the previous page.
+          </p>
+          <p>
+            <b>Note:</b>OQS user sessions will remain active for 24 hours,
+            unless the user manually terminates the session through logging out.
+          </p>
+        </info>
+      </step>
+      <step id="openPodList">
+        <cmd>Open the Pod List View</cmd>
+        <info>
+          <p>
+            Click on the Pod tab in the nav bar and then select
+            <b>"List View"</b>.
+          </p>
+        </info>
+      </step>
+      <step id="openCreatePod">
+        <cmd>Select the "Create" Button</cmd>
+        <info>
+          <p>
+            Click on the <b>"Create New Pod"</b> button above the Pod list.
+          </p>
+        </info>
+      </step>
+      <step id="enterDetails">
+        <cmd>Enter the Pod Details</cmd>
+        <info>
+          <p>Enter the details as shown below.</p>
+          <p><b>Note:</b> Restrictions on the fields are as follows: </p>
+          <ul>
+            <li>
+              <b>[MANDATORY] Name</b> must be a unique string between 5 and 20
+              characters.
+            </li>
+            <li>
+              <b>Pod Load Tolerance</b> must be an integer
+              greater than 0. <i>Default: Value taken from a Pod's default configuration, found under configurations area which is managed by Admins only.</i>
+            </li>
+            <li>
+              <b>Queue Enabled</b> is a flag value set to either "true" or
+              "false". <i>Default: false</i>
+            </li>
+            <li>
+              <b>Queue Product(s)</b> is a select value set to either "All", an individual product
+              and or any combination of products. <i>Default: "All"</i>
+            </li>
+            <li>
+              <b>Load Value</b> must be an integer greater than 0.
+              <i>Default: Taken from configuration artifact, managed by Admins.</i>
+            </li>
+            <li>
+              <b>Timeout Value</b> must be an integer greater than 0.
+              <i>Default: Taken from configuration artifact, managed by Admins.</i>
+            </li>
+
+          </ul>
+        </info>
+      </step>
+      <step id="savePod">
+        <cmd>Save</cmd>
+        <info>
+          <p>
+            Click the <b>"Save"</b> button to save the Pod details.
+          </p>
+          <p>
+            <b>Note:</b>
+            A User will be unable to save a Pod if any of the data supplied is
+            invalid. Invalid data will be highlighted using red text.
+          </p>
+        </info>
+      </step>
+    </steps>
+
+    <result>
+      <p>
+        The user will be redirected to the list view where it is
+        possible to view recently defined and or existing Pod information.
+      </p>
+      <p>
+        Users can view full details of any Pod selecting one from the tiles/list
+        view provided.
+      </p>
+      <p>
+        The <b>"edit"</b> button on this view-page directs logged-in users to an
+        edit page where it is possible to modify the associated Pod information.
+      </p>
+    </result>
+
+  </taskbody>
+</task>

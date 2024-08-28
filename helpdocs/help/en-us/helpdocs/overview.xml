@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="Overview">
+    <title>Overview</title>
+    <conbody>
+        <p>
+          The OpenStack Queuing Solution (OQS) is a tool that is used to handle
+          the queuing of Deployment CI/CD pipelines within their
+          respective OpenStack multi-tenant Cloud (Pod) environments.
+        </p>
+        <p>
+          OQS is sent basic information (name, job-type, product and associated Pod) on Deployments
+          performing software deployment through the OQS API.
+        </p>
+        <p>
+          Once this information is sent, OQS adds the Deployment to the queue
+          within its associated Pod. If there are no active Pods, the Deployment's
+          queue-status becomes "Active". Once the Deployment CI/CD pipeline is complete
+          the queue-status of the Deployment becomes "Finished". The next Deployment CI/CD
+          pipeline in the queue will now be set to "Active".
+        </p>
+        <p>
+          The purpose of the tool is to allow administrators to configure
+          specific queuing for each individual Pod, as well as provide
+          a Radiator-View interface for users to analyse the queuing information
+          for every Pod.
+        </p>
+        <p>
+          The result is an improved queuing solution for Deployments, more
+          advanced administration abilities for Pod queue-handling, as well as
+          a more easily digested view of the queue-status for individual
+          Deployments within each Pod.
+        </p>
+    </conbody>
+</concept>

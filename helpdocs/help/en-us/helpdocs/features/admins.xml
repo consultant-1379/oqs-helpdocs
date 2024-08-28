@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="AdminsAndGroups">
+  <title>Admins and Groups</title>
+  <conbody>
+    <ul>
+      <li><xref type="concept" href="adminsAndGroups.xml#overview">Overview</xref></li>
+      <li><xref type="concept" href="adminsAndGroups.xml#purpose">Purpose of this Feature</xref></li>
+      <li><xref type="concept" href="adminsAndGroups.xml#adminCreation">Creating an Admin</xref></li>
+      <li><xref type="concept" href="adminsAndGroups.xml#adminDeletion">Deleting an Admin</xref></li>
+
+    </ul>
+
+    <section>
+      <title id="overview">Overview</title>
+      <lines>
+        This page provides information on Admins in the Openstack Queuing Solution.
+      </lines>
+    </section>
+
+    <section>
+      <title id="purpose">Purpose of this Feature</title>
+      <lines>
+        There are three role types available in OQS:
+      </lines>
+        <ol>
+            <li><b>user</b> : Default role in OQS.</li>
+            <li><b>admin</b> : In addition to 'user' privileges, Admin can perform CRUD operations for the Pods/Deployments.</li>
+            <li><b>superAdmin</b> : This role type has no restrictions.</li>
+        </ol>
+    </section>
+
+    <section>
+      <title id="adminCreation">Creating an Admin</title>
+        <ol>
+            <li>When logged in as a superAdmin, click on the username in the top right corner of the tool.</li>
+            <li>From the dropdown menu, click on 'Admins'.</li>
+            <li>In the 'Admins' page, click 'Create new Admin'.</li>
+            <li>Enter the signum of the user that requires Admin/SuperAdmin role.</li>
+            <li>Using Radio buttons, select the role required.</li>
+            <li>Click 'Save'.</li>
+        </ol>
+    </section>
+
+    <section>
+        <title id="adminDeletion">Deleting an Admin </title>
+            <ol>
+                <li>When logged in as a superAdmin, click on the username in the top right corner of the tool.</li>
+                <li>From the dropdown menu, click on 'Admins'.</li>
+                <li>To delete an Admin/superAdmin, click the 'Delete' button.</li>
+                <li>User role is reverted to 'user'</li>
+            </ol>
+    </section>
+  </conbody>
+</concept>
+
+

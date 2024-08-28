@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<task id="logs">
+  <title>Historical Logs</title>
+  <taskbody>
+    <context>
+      <p>
+        A Historical Log within the OpenStack Queuing Solution is a representation of
+        all actions performed on a specific Pod / Deployment within the OQS.
+        Selecting the "Historical Log" option in the nav-bar provides users the option
+        to view either Pods or Deployments logs list view.
+      </p>
+
+      <p><b>Object Logs List View</b></p>
+      <p>
+        The list page provides a list-view for Pods / Deployments logs, providing information on
+        each object. The objects are split between two tables: "Live" and "Deleted". "Live" objects
+        are ones that still exist within the main Database whilst "Deleted" ones have been removed
+        from the Database.
+      </p>
+      <p>
+        Each table provides basic information about each object where applicable such as
+        Object ID, Object name, when it was created and by whom, as well as when it was deleted and
+        by whom. A search field exists for filtering the tables by specific Object values. The tables
+        are also sortable by any of the parameter values.
+      </p>
+      <p>
+        A 'view log' action button exists for each object in the tables and allows a user to access
+        an Objects log-view page that provides more detailed information on actions performed to
+        the individual Object.
+      </p>
+
+      <p><b>Object Log View</b></p>
+      <p>
+        The log-view page provides a list of logs stating what actions were performed on a specific
+        Pod or Deployment object. The first log states who created the object and when, with a
+        "Download JSON" button so that the user can download a JSON file of the object as it existed
+        when it was created. For each individual update performed on an object, the following is
+        provided:
+      </p>
+      <ol>
+        <li>
+          Who performed the update. (Selecting the Updater's name opens a 'create email' panel so
+          that the user can contact the updater if needs be.)
+        </li>
+        <li>
+          The time and date that the update occurred on.
+        </li>
+        <li>
+          A table that lists and details each specific change made to the object during that update.
+        </li>
+        <li>
+          A "Download JSON" button that will download a JSON file of the object as it existed when
+          this update occurred.
+        </li>
+      </ol>
+      <p>
+        <b>Note:</b> The Objects Log order for the Updates section is latest to oldest by date time.
+        If the object has been deleted from the database, a final log will state by whom and when
+        the deletion occurred. A "Download JSON" button is also provided here so that the user can
+        download a JSON file of the object as it existed before it was deleted.
+      </p>
+
+      <p><b>Deleted Artifacts Logs Retention Policy</b></p>
+      <lines>
+        The deleted Artifacts logs are only kept up to six months, anything older than six months will be permanently deleted from the database.
+        This deletion process is scheduled at start of each month.
+      </lines>
+
+      <p><b>Search Filter in Logs</b></p>
+      <p>
+        As every single artifact's history is arranged and sorted by time, it is difficult to find a specific key or value
+        in an entire artifact's history. This functionality provides the ability to search any keys or values within each
+        updated log in the entire artifact's history. Once the user inputs the search-query and clicks the corresponding
+        button to search by either key or value, the records are filtered down to only those with any key/values that match
+        the provided search-query. Click the clear button to delete the search pattern and get the entire history back to the page.
+      </p>
+      <p>
+        <b> Note: To search for Dates, use YYYY-MM-YY format. e.g. 2022-02-02. </b>
+      </p>
+    </context>
+  </taskbody>
+</task>

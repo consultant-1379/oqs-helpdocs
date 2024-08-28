@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<task id="deployments">
+  <title>Deployments</title>
+  <taskbody>
+    <context>
+      <p>
+        A Deployment within the OpenStack Queuing Solution (OQS) is a
+        representation of vENM/cENM in terms of the OpenStack Cloud it will be
+        installed in.
+      </p>
+      <p>
+        Deployments are added to OQS queue using the OQS REST API as part of
+        the automated CI/CD pipeline. Information on a Deployment is accessed
+        within the view-page of its Parent Pod.<br/>
+        <b>NOTE:</b> Admin users are only allowed to delete a Deployment.<br/>
+        Two ways to delete Deployments using the UI, on a Pod view page:
+        <ul>
+          <li>All Pod's Deployments by clicking "Delete All Deployments" button (seen by Admin users only) at top of the page.</li>
+          <li>Individual Pod Deployments by clicking "Delete" button under Action(s) column on the Finished Deployments table.</li>
+        </ul>
+        Here, Deployments are split between 3 tables:
+      </p>
+      <ol>
+        <li>
+          <b>Queued Deployments:</b> This table lists CI/CD pipelines that
+          are currently waiting in the queue before being allowed to proceed.
+          Once added to OQS, a Deployment joins the Parent-Pods queue and will
+          remain queued while no work-tokens are available. If the Parent Pod's
+          queuing-enabled toggle is set to false, the Deployment will also remain
+          'Queued', regardless of available work-tokens. Information provided on the
+          'Queued Deployments' table include Deployment name, job-type, duration
+          of time spent queuing and the specific time queuing began.
+        </li>
+        <li>
+          <b>Active Deployments:</b> This table lists Deployment CI/CD pipelines
+          that are currently active. A Deployment becomes 'Active' when it
+          is in first place of the queue and a work-token is available. Once
+          'Active', the Deployments CI/CD pipeline can proceed. Information
+          provided on the 'Active Deployments' table include Deployment name,
+          job-type, duration of time spent running its job workflow, and the
+          duration of time left until the Deployment times out. NOTE: A custom
+          timeout duration value for a specific Deployment instance(s) can be
+          set via the REST API using the 'customTimeout' parameter, which supersedes
+          the timeout duration values configured at the generic Pod level.
+        </li>
+        <li>
+          <b>Finished Deployments:</b> This table lists Deployment CI/CD
+          pipelines that have finished running, whether successfully
+          or with failures. Successful Deployments are greyed out while failed
+          Deployments are displayed in red. Information provided on the 'Finished
+          Deployments' table include Deployment name, job-type, job completion
+          status type (Success/Failure), total queuing duration and total
+          running duration.
+        </li>
+      </ol>
+
+      <p><b>Objective</b></p>
+      <p>Edit the Status of an Queued or Active Deployment in a Pod.</p>
+      <p>The Queued/Active Deployments status within its associated Pod can be changed from Queued/Active to either one of the following options:</p>
+      <ul>
+        <li>Finished</li>
+        <li>Failed</li>
+        <li>Timed-out</li>
+      </ul>
+      <p>
+        When the Deployment status has been changed,
+        the Deployment will move from the Queued/Active Deployments to the Finished Deployments.<br/>
+        <b>NOTE:</b> Once a Deployments status has been changed it can not be reverted.
+      </p>
+
+      <p><b>Note:</b>
+        The status of Active can only be changed by user with Admin user privileges.
+      </p>
+      <p><b>Outline</b>
+        <ol>
+          <li>
+            <xref href="#loginToOQS">Log-In to the OQS</xref>
+          </li>
+          <li>
+            <xref href="#openPodView">Open the Pod View Page</xref>
+          </li>
+          <li>
+            <xref href="#viewDeploymentDetails">View Deployment Details</xref>
+          </li>
+          <li>
+            <xref href="#editQueueStatus">Edit Deployment Status</xref>
+          </li>
+          <li>
+            <xref href="#saveDetails">Save</xref>
+          </li>
+        </ol>
+      </p>
+    </context>
+
+    <steps>
+      <step id="loginToOQS">
+        <cmd>Log-In to the OQS</cmd>
+        <info>
+          <p>
+            Select the User tab in the nav bar, then select <b>"login"</b>.
+            On submission of the required user login credentials, the user will
+            be re-directed to the main page.
+          </p>
+        </info>
+      </step>
+      <step id="openPodList">
+        <cmd>Open the Pod View Page</cmd>
+        <info>
+          <p>
+            Click on the Pods tab in the nav bar and then select
+            <b>"List View"</b>. Click the <b>View</b> button on the Pod row associated with the Deployment to edit.
+          </p>
+        </info>
+      </step>
+      <step id="viewDeploymentDetails">
+        <cmd>View Deployment Details</cmd>
+        <info>
+          <p>Open the Pod View page, and from the Queued/Active Deployments table click on the Deployment row's Action button <b>Edit Status</b> to open the edit status modal form.</p>
+        </info>
+      </step>
+      <step id="editQueueStatus">
+        <cmd>Edit Deployment Status</cmd>
+        <info>
+          <p>From the <b>Status</b> dropdown menu, select one of the following statuses:</p>
+          <ul>
+            <li>Finished</li>
+            <li>Failed</li>
+            <li>Timed-out</li>
+          </ul>
+        </info>
+      </step>
+      <step id="saveDetails">
+        <cmd>Save Details</cmd>
+        <info>
+          <p>
+            Click the <b>Save</b> button, the Deployment Status will be updated.
+          </p>
+        </info>
+      </step>
+    </steps>
+
+    <result>
+      <p>
+        The user will be redirected back to the Pod view page where it is
+        possible to view recently updated Deployment information.
+        The Deployment will be moved from Queued/Active Deployments table to Finished Deployments table
+        and Metrics will show the updated statistics based on updated Deployment status.
+      </p>
+    </result>
+
+  </taskbody>
+</task>

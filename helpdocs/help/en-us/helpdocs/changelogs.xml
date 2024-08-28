@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="Features">
+    <conbody>
+        <section>
+            <title>Changelogs</title>
+            <lines>
+                <p>The following links provide change logs for each service in the OpenStack Queuing Solution.</p>
+                <li><xref type="concept" href="https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/content/sites/tor/oqs-baseline/latest/changelog.html" scope="external">OQS Baseline</xref></li>
+                <li><xref type="concept" href="https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/content/sites/tor/oqs-client/latest/changelog.html" scope="external">OQS Client</xref></li>
+                <li><xref type="concept" href="https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/content/sites/tor/oqs-server/latest/changelog.html" scope="external">OQS Server</xref></li>
+                <li><xref type="concept" href="https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/content/sites/tor/oqs-apidocs/latest/changelog.html" scope="external">OQS API Docs</xref></li>
+                <li><xref type="concept" href="https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/content/sites/tor/oqs-helpdocs/latest/changelog.html" scope="external">OQS Help Docs</xref></li>
+            </lines>
+        </section>
+    </conbody>
+</concept>

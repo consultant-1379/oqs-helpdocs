@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="Prerequisites">
+    <title>Prerequisites</title>
+    <conbody>
+        <section>
+            <title>OQS Permissions</title>
+            <p>User authentication is not required to perform the following actions:</p>
+            <ul>
+              <li>View the Pods radiator page.</li>
+              <li>View the Pods list page.</li>
+              <li>View the Pods historical-logs list page.</li>
+
+              <li>View individual Pods information pages.</li>
+              <li>View individual Pods log pages.</li>
+
+              <li>View the Deployments historical-logs list page.</li>
+              <li>View individual Deployments log pages.</li>
+            </ul>
+            <p>The following actions, however, do require User authentication:</p>
+            <ul>
+              <li>Create Pods</li>
+              <li>Update Pods (Admin users only)</li>
+              <li>Delete Pods (Admin users only)</li>
+              <li>Update Deployment Status (Admin users only)</li>
+            </ul>
+        </section>
+    </conbody>
+</concept>

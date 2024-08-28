@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<site>
+  <title>OpenStack Queuing Solution</title>
+  <homeTitle>Home</homeTitle>
+
+  <home>
+    <blocks>
+      <block color="purple" icon="page" href="overview.xml">
+          <title>Overview</title>
+          <desc>Learn about the OpenStack Queuing Solution (OQS).</desc>
+      </block>
+      <block color="green" icon="page" href="prerequisites.xml">
+          <title>Prerequisites</title>
+          <desc>Learn about the prerequisites for using OQS.</desc>
+      </block>
+      <block color="blue" icon="page" href="features.xml">
+        <title>Features</title>
+        <desc>Learn the key features of OQS.</desc>
+      </block>
+      <block color="darkblue" icon="page" href="/api-docs" scope="external">
+        <title>REST API Documentation</title>
+        <desc>Learn how to use the REST API for OQS.</desc>
+      </block>
+      <block color="flat_purple" icon="page" href="changelogs.xml">
+        <title>Change Logs</title>
+        <desc>Records of all changes made to OQS.</desc>
+      </block>
+    </blocks>
+  </home>
+</site>

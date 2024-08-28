@@ -1,0 +1,3 @@
+image:
+  repository: armdocker.seli.gic.ericsson.se/proj-openstack_queuing_solution/oqs_helpdocs
+  tag: 1.0.0-01
